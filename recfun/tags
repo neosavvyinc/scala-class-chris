@@ -1,0 +1,250 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BalanceSuite	src/test/scala/recfun/BalanceSuite.scala	/^class BalanceSuite extends FunSuite {$/;"	c
+Challenge	project/CourseraHttp.scala	/^case class Challenge(email: String, challengeKey: String, state: String)$/;"	c
+CountChangeSuite	src/test/scala/recfun/CountChangeSuite.scala	/^class CountChangeSuite extends FunSuite {$/;"	c
+CourseraHttp	project/CourseraHttp.scala	/^object CourseraHttp {$/;"	c
+CustomTextOutput	project/StyleChecker.scala	/^  class CustomTextOutput[T <: FileSpec]() extends Output[T] {$/;"	c
+GradingFeedback	project/GradingFeedback.scala	/^object GradingFeedback {$/;"	c
+JsonSubmission	project/CourseraHttp.scala	/^case class JsonSubmission(api_state: String, user_info: JsValue, submission_metadata: JsValue, solutions: JsValue, submission_encoding: String, submission: String)$/;"	c
+LimitedStringBuffer	project/ScalaTestRunner.scala	/^  class LimitedStringBuffer {$/;"	c
+List	project/ScalaTestRunner.scala	/^      val List(grade, max) = nums.split(';').toList$/;"	l
+Main	src/main/scala/recfun/Main.scala	/^object Main {$/;"	c
+PascalSuite	src/test/scala/recfun/PascalSuite.scala	/^class PascalSuite extends FunSuite {$/;"	c
+ProgFunBuild	project/ProgFunBuild.scala	/^object ProgFunBuild extends Build {$/;"	c
+ProjectDetails	project/ProgFunBuild.scala	/^case class ProjectDetails(packageName: String,$/;"	c
+QueueResult	project/CourseraHttp.scala	/^case class QueueResult(apiState: String)$/;"	c
+RecordingLogger	project/RecordingLogger.scala	/^object RecordingLogger extends Logger {$/;"	c
+RichJsValue	project/RichJsValue.scala	/^class RichJsValue(js: JsValue) {$/;"	c
+RichJsValue	project/RichJsValue.scala	/^object RichJsValue {$/;"	c
+ScalaTestRunner	project/ScalaTestRunner.scala	/^object ScalaTestRunner {$/;"	c
+Settings	project/Settings.scala	/^object Settings {$/;"	c
+StyleChecker	project/StyleChecker.scala	/^object StyleChecker {$/;"	c
+SubmitJsonProtocol	project/CourseraHttp.scala	/^object SubmitJsonProtocol extends DefaultJsonProtocol {$/;"	c
+Value	project/ProgFunBuild.scala	/^          val Value(projectDetails) = projectDetailsR$/;"	l
+accept	project/ProgFunBuild.scala	/^    def accept(file: File) = {$/;"	m
+allTestsPassed	project/GradingFeedback.scala	/^  def allTestsPassed() {$/;"	m
+apiKey	project/ProgFunBuild.scala	/^  val apiKey = SettingKey[String]("apiKey")$/;"	l
+apiState	project/GradingFeedback.scala	/^  var apiState: String = ""$/;"	l
+append	project/ScalaTestRunner.scala	/^    def append(s: String) =$/;"	m
+arrayValues	project/RichJsValue.scala	/^  def arrayValues: List[JsValue] = js match {$/;"	m
+assess	project/StyleChecker.scala	/^  def assess(allSources: Seq[File]): (String, Int) = {$/;"	m
+assignmentProject	project/ProgFunBuild.scala	/^  lazy val assignmentProject = Project(id = "assignment", base = file(".")) settings($/;"	l
+balance	src/main/scala/recfun/Main.scala	/^  def balance(chars: List[Char]): Boolean = {$/;"	m
+baseReq	project/CourseraHttp.scala	/^        val baseReq = url(submitUrl(submitProject.courseId))$/;"	l
+baseReq	project/CourseraHttp.scala	/^    val baseReq = url(Settings.uploadFeedbackUrl(gradeProject.courseId))$/;"	l
+baseReq	project/CourseraHttp.scala	/^    val baseReq = url(challengeUrl(submitProject.courseId))$/;"	l
+buf	project/ScalaTestRunner.scala	/^    val buf = new ListBuffer[String]()$/;"	l
+bytes	project/CourseraHttp.scala	/^      val bytes = new Array[Byte](fileLength.toInt)$/;"	l
+call	project/ScalaTestRunner.scala	/^      def call { proc.exitValue() }$/;"	m
+challengeResponse	project/CourseraHttp.scala	/^  def challengeResponse(challenge: Challenge, otPassword: String): String =$/;"	m
+challengeUrl	project/Settings.scala	/^  def challengeUrl(courseId: String) = "https:\/\/class.coursera.org\/"+ courseId +"\/assignment\/challenge"$/;"	m
+chars	project/CourseraHttp.scala	/^    val chars = Hex.encodeHex(DigestUtils.sha(s))$/;"	l
+classesDir	src/main/scala/common/package.scala	/^    val classesDir = new File(getClass.getResource(".").toURI)$/;"	l
+classpathString	project/ScalaTestRunner.scala	/^    val classpathString = classpath map {$/;"	l
+clear	project/RecordingLogger.scala	/^  def clear() {$/;"	m
+cmd	project/ScalaTestRunner.scala	/^    val cmd = "java" ::$/;"	l
+commonSourcePackages	project/ProgFunBuild.scala	/^  val commonSourcePackages = SettingKey[Seq[String]]("commonSourcePackages")$/;"	l
+compileFailed	project/GradingFeedback.scala	/^  def compileFailed(log: String) {$/;"	m
+compileFailed	project/ProgFunBuild.scala	/^  def compileFailed(inc: Incomplete, log: String) {$/;"	m
+compileTestFailed	project/ProgFunBuild.scala	/^  def compileTestFailed(inc: Incomplete, log: String) {$/;"	m
+configFile	project/StyleChecker.scala	/^    val configFile = new File("project\/scalastyle_config.xml").getAbsolutePath$/;"	l
+copiedResourceFiles	project/ProgFunBuild.scala	/^  def copiedResourceFiles(copied: collection.Seq[(java.io.File, java.io.File)]): List[File] = {$/;"	m
+countChange	src/main/scala/recfun/Main.scala	/^  def countChange(money: Int, coins: List[Int]): Int = ???$/;"	m
+createHandout	project/ProgFunBuild.scala	/^  val createHandout = InputKey[File]("createHandout")$/;"	l
+createHandoutSetting	project/ProgFunBuild.scala	/^  lazy val createHandoutSetting = createHandout <<= inputTask { argTask =>$/;"	l
+currentProject	project/ProgFunBuild.scala	/^  val currentProject = SettingKey[String]("currentProject")$/;"	l
+decodeBase64	project/CourseraHttp.scala	/^  def decodeBase64(str: String): Array[Byte] = {$/;"	m
+deleteFiles	project/ProgFunBuild.scala	/^  def deleteFiles(submissionSrcDir: File, basedir: File) {$/;"	m
+details	project/ProgFunBuild.scala	/^        val details = detailsMap.getOrElse(projectName, {s.log.error(wrongNameMsg); failSubmit()})$/;"	l
+downloadUnpackFailed	project/GradingFeedback.scala	/^  def downloadUnpackFailed(log: String) {$/;"	m
+encodeBase64	project/CourseraHttp.scala	/^  def encodeBase64(bytes: Array[Byte]): String =$/;"	m
+encodedFile	project/CourseraHttp.scala	/^        val encodedFile = jsonSubmission.submission$/;"	l
+enrichJsValue	project/RichJsValue.scala	/^  implicit def enrichJsValue(js: JsValue) = new RichJsValue(js)$/;"	m
+executor	project/ScalaTestRunner.scala	/^    val executor = Executors.newSingleThreadExecutor()$/;"	l
+extractJson	project/CourseraHttp.scala	/^  def extractJson(jsonData: String, targetJar: File): ValidationNEL[String, QueueResult] = {$/;"	m
+failDownloadUnpack	project/ProgFunBuild.scala	/^  def failDownloadUnpack(): Nothing = {$/;"	m
+failSubmit	project/ProgFunBuild.scala	/^  def failSubmit(): Nothing = {$/;"	m
+feedbackFileContent	project/ScalaTestRunner.scala	/^    val feedbackFileContent = try {$/;"	l
+feedbackString	project/GradingFeedback.scala	/^  def feedbackString(html: Boolean = true) = {$/;"	m
+fileCount	project/StyleChecker.scala	/^    var fileCount: Int = _$/;"	l
+fileData	project/CourseraHttp.scala	/^        val fileData = encodeBase64(bytes)$/;"	l
+fileLength	project/CourseraHttp.scala	/^    val fileLength = sourcesJar.length()$/;"	l
+files	project/CourseraHttp.scala	/^      val files = sbt.IO.unzip(file, targetDirectory)$/;"	l
+files	project/ProgFunBuild.scala	/^          val files = filesFinder(handoutProjectName).get$/;"	l
+filesWithRelativeNames	project/ProgFunBuild.scala	/^          val filesWithRelativeNames = files.x_!(relativeTo(basedir)) map {$/;"	l
+filter	project/ProgFunBuild.scala	/^  def filter(basedir: File, packages: Seq[String]) = new FileFilter {$/;"	m
+finder	project/ProgFunBuild.scala	/^        val finder = allFiles ** filter(basedir, globalPackages :+ project.packageName)$/;"	l
+finder	project/ProgFunBuild.scala	/^      val finder = resources ** filter(resourceDir, List(project.packageName))$/;"	l
+finder	project/ProgFunBuild.scala	/^      val finder = sources ** filter(testSrcScalaDir, gradingSrcs :+ project.packageName)$/;"	l
+fullExceptionString	project/CourseraHttp.scala	/^  def fullExceptionString(e: Throwable) =$/;"	m
+future	project/ScalaTestRunner.scala	/^    val future: Future[Unit] = executor.submit(new Callable[Unit] {$/;"	l
+getChallenge	project/CourseraHttp.scala	/^  def getChallenge(email: String, submitProject: ProjectDetails): ValidationNEL[String, Challenge] = {$/;"	m
+getSubmission	project/ProgFunBuild.scala	/^  val getSubmission = TaskKey[Unit]("getSubmission")$/;"	l
+getSubmissionHook	project/ProgFunBuild.scala	/^  val getSubmissionHook = (unmanagedSources in Compile) <<= (unmanagedSources in Compile).dependsOn(getSubmission)$/;"	l
+getSubmissionSetting	project/ProgFunBuild.scala	/^  val getSubmissionSetting = getSubmission <<= (baseDirectory, scalaSource in Compile) map { (baseDir, scalaSrcDir) =>$/;"	l
+grade	project/ProgFunBuild.scala	/^  val grade = TaskKey[Unit]("grade")$/;"	l
+gradeProjectDetails	project/ProgFunBuild.scala	/^  val gradeProjectDetails = TaskKey[ProjectDetails]("gradeProjectDetails")$/;"	l
+gradeProjectDetailsSetting	project/ProgFunBuild.scala	/^  lazy val gradeProjectDetailsSetting = gradeProjectDetails <<= (initGrading, partIdOfGradingProject, projectDetailsMap in assignmentProject) map { (_, partId, detailsMap) =>$/;"	l
+gradeScore	project/ProgFunBuild.scala	/^      val gradeScore = GradingFeedback.maxStyleScore * score \/ StyleChecker.maxResult$/;"	l
+gradeSetting	project/ProgFunBuild.scala	/^  val gradeSetting = grade <<= (scalaTestSubmission, styleCheckSubmission, apiKey, gradeProjectDetails, streams) mapR { (_, _, apiKeyR, projectDetailsR, s) =>$/;"	l
+gradingTestPackages	project/ProgFunBuild.scala	/^  val gradingTestPackages = SettingKey[Seq[String]]("gradingTestPackages")$/;"	l
+handleFailure	project/ProgFunBuild.scala	/^  def handleFailure[R](handler: (Incomplete, String) => Unit) = (res: Result[R]) => res match {$/;"	m
+handoutFiles	project/ProgFunBuild.scala	/^  val handoutFiles = TaskKey[String => PathFinder]("handoutFiles")$/;"	l
+hasErrors	project/RecordingLogger.scala	/^  def hasErrors = buffer.nonEmpty$/;"	m
+hasFieldNamed	project/RichJsValue.scala	/^  def hasFieldNamed(name: String) = js match {$/;"	m
+individualTestTimeout	project/Settings.scala	/^  val individualTestTimeout = 40$/;"	l
+initGrading	project/ProgFunBuild.scala	/^  val initGrading = TaskKey[Unit]("initGrading")$/;"	l
+initGradingSetting	project/ProgFunBuild.scala	/^  lazy val initGradingSetting = initGrading <<= (clean, sourceDirectory, baseDirectory) map { (_, submissionSrcDir, basedir) =>$/;"	l
+initialize	project/GradingFeedback.scala	/^  def initialize() {$/;"	m
+is	project/CourseraHttp.scala	/^        val is = new FileInputStream(sourcesJar)$/;"	l
+isFailed	project/GradingFeedback.scala	/^  def isFailed = failed$/;"	m
+iter	src/main/scala/recfun/Main.scala	/^    def iter(parens: Int, chars: List[Char]): Boolean = {$/;"	m
+jarContent	project/CourseraHttp.scala	/^        val jarContent = decodeBase64(encodedFile)$/;"	l
+js	project/CourseraHttp.scala	/^        val js = JsonParser(res)$/;"	l
+jsonFile	project/ProgFunBuild.scala	/^      val jsonFile = baseDir \/ Settings.submissionJsonFileName$/;"	l
+jsonSubmissionFormat	project/CourseraHttp.scala	/^  implicit val jsonSubmissionFormat = jsonFormat6(JsonSubmission)$/;"	l
+log	project/RecordingLogger.scala	/^  def log(level: Level.Value, message: => String) =$/;"	m
+logOpt	project/ProgFunBuild.scala	/^    val logOpt = s match {$/;"	l
+logger	project/ProgFunBuild.scala	/^      val logger = s.log$/;"	l
+logger	project/ProgFunBuild.scala	/^    val logger = s.log$/;"	l
+main	src/main/scala/recfun/Main.scala	/^  def main(args: Array[String]) {$/;"	m
+maxOutputLineLength	project/Settings.scala	/^  val maxOutputLineLength = 1000$/;"	l
+maxOutputLines	project/Settings.scala	/^  val maxOutputLines = 10*1000$/;"	l
+maxResult	project/StyleChecker.scala	/^  val maxResult = 100$/;"	l
+maxStyleScore	project/GradingFeedback.scala	/^  def maxStyleScore = vMaxStyleScore$/;"	m
+maxSubmitFileSize	project/Settings.scala	/^  val maxSubmitFileSize = {$/;"	l
+maxTestScore	project/GradingFeedback.scala	/^  def maxTestScore = vMaxTestScore$/;"	m
+mb	project/Settings.scala	/^    val mb = 1024 * 1024$/;"	l
+messages	project/StyleChecker.scala	/^    val messages = new ScalastyleChecker().checkFiles($/;"	l
+msg	project/CourseraHttp.scala	/^        val msg = "Error while unpacking the jar file "+ file.getAbsolutePath +" to "+ targetDirectory.getAbsolutePath +"\\n"+ e.toString$/;"	l
+msg	project/ProgFunBuild.scala	/^            val msg =$/;"	l
+msg	project/ProgFunBuild.scala	/^          val msg ="""$/;"	l
+msg	project/ProgFunBuild.scala	/^        val msg = msgRaw.stripMargin.format(partId, validIds.mkString(", ")) + "\\n "$/;"	l
+msg	project/ProgFunBuild.scala	/^        val msg =$/;"	l
+msg	project/ScalaTestRunner.scala	/^              val msg =$/;"	l
+msg	project/ScalaTestRunner.scala	/^        val msg = "Could not extract weight from grading feedback\\n"+ s$/;"	l
+msg	project/ScalaTestRunner.scala	/^        val msg = "Error occured while reading the output file of ScalaTest\\n"+ e.toString +"\\n"+ out.toString()$/;"	l
+msg	project/ScalaTestRunner.scala	/^        val msg = "Error occured while running the ScalaTest command\\n"+ e.toString +"\\n"+ out.toString()$/;"	l
+msg	project/ScalaTestRunner.scala	/^        val msg = "Timeout when running ScalaTest\\n"+ out.toString()$/;"	l
+msg	project/ScalaTestRunner.scala	/^        val msg =$/;"	l
+msg	project/StyleChecker.scala	/^    val msg =$/;"	l
+msgRaw	project/ProgFunBuild.scala	/^        val msgRaw =$/;"	l
+object	src/main/scala/common/package.scala	/^package object common {$/;"	p
+offlineMode	project/Settings.scala	/^  val offlineMode = false$/;"	l
+out	project/ScalaTestRunner.scala	/^    val out = new LimitedStringBuffer()$/;"	l
+outfile	project/ProgFunBuild.scala	/^      val outfile = basedir \/ Settings.testResultsFileName$/;"	l
+outfileStr	project/ScalaTestRunner.scala	/^    val outfileStr = outfile.getAbsolutePath$/;"	l
+output	project/StyleChecker.scala	/^    val output = new ByteArrayOutputStream()$/;"	l
+outputResult	project/StyleChecker.scala	/^    val outputResult = Console.withOut(new PrintStream(output)) {$/;"	l
+p	project/ScalaTestRunner.scala	/^    var p: SysProc = null$/;"	l
+packageSubmission	project/ProgFunBuild.scala	/^  val packageSubmission = TaskKey[File]("packageSubmission")$/;"	l
+packageSubmissionFiles	project/ProgFunBuild.scala	/^  val packageSubmissionFiles = {$/;"	l
+parsed	project/CourseraHttp.scala	/^          val parsed = JsonParser(jsonData)$/;"	l
+partIdOfGradingProject	project/ProgFunBuild.scala	/^  val partIdOfGradingProject = SettingKey[String]("partIdOfGradingProject")$/;"	l
+parts	project/CourseraHttp.scala	/^      val parts = res.split('|').filterNot(_.isEmpty)$/;"	l
+pascal	src/main/scala/recfun/Main.scala	/^  def pascal(c: Int, r: Int): Int = {$/;"	m
+path	project/StyleChecker.scala	/^      val path = f.getAbsolutePath$/;"	l
+penalties	project/StyleChecker.scala	/^    val penalties = outputResult.errors + outputResult.warnings$/;"	l
+perfectStyle	project/GradingFeedback.scala	/^  def perfectStyle() {$/;"	m
+policyFile	project/ProgFunBuild.scala	/^      val policyFile = basedir \/ ".." \/ Settings.policyFileName$/;"	l
+policyFile	project/ProgFunBuild.scala	/^      val policyFile = basedir \/ Settings.policyFileName$/;"	l
+policyFileName	project/Settings.scala	/^  val policyFileName = "allowAllPolicy"$/;"	l
+policyFileStr	project/ScalaTestRunner.scala	/^    val policyFileStr = policyFile.getAbsolutePath$/;"	l
+projectDetailsMap	project/ProgFunBuild.scala	/^  val projectDetailsMap = SettingKey[Map[String, ProjectDetails]]("projectDetailsMap")$/;"	l
+projectDir	src/main/scala/common/package.scala	/^    val projectDir = classesDir.getParentFile.getParentFile.getParentFile.getParentFile$/;"	l
+projectFiles	project/ProgFunBuild.scala	/^  def projectFiles(allFiles: Seq[File], basedir: File, projectName: String, globalPackages: Seq[String], detailsMap: Map[String, ProjectDetails]) = {$/;"	m
+prop	project/ScalaTestRunner.scala	/^    def prop(name: String, value: String) = "-D"+ name +"="+ value$/;"	m
+read	project/CourseraHttp.scala	/^        val read = is.read(bytes)$/;"	l
+readAndClear	project/RecordingLogger.scala	/^  def readAndClear() = {$/;"	m
+readAndUnpackSubmission	project/ProgFunBuild.scala	/^  def readAndUnpackSubmission(baseDir: File, targetSourceDir: File) {$/;"	m
+readCompileLog	project/ProgFunBuild.scala	/^  val readCompileLog = (compile in Compile) <<= (compile in Compile) mapR handleFailure(compileFailed)$/;"	l
+readJsonFile	project/CourseraHttp.scala	/^  def readJsonFile(jsonFile: File, targetJar: File): ValidationNEL[String, QueueResult] = {$/;"	m
+readTestCompileLog	project/ProgFunBuild.scala	/^  val readTestCompileLog = (compile in Test) <<= (compile in Test) mapR handleFailure(compileTestFailed)$/;"	l
+recfun	src/main/scala/recfun/Main.scala	/^package recfun$/;"	p
+recfun	src/test/scala/recfun/BalanceSuite.scala	/^package recfun$/;"	p
+recfun	src/test/scala/recfun/CountChangeSuite.scala	/^package recfun$/;"	p
+recfun	src/test/scala/recfun/PascalSuite.scala	/^package recfun$/;"	p
+res	project/ProgFunBuild.scala	/^      val res = for {$/;"	l
+res	project/ProgFunBuild.scala	/^    val res = for {$/;"	l
+res	project/RecordingLogger.scala	/^    val res = buffer.mkString("\\n")$/;"	l
+resourceAsStreamFromSrc	src/main/scala/common/package.scala	/^  def resourceAsStreamFromSrc(resourcePath: List[String]): Option[java.io.InputStream] = {$/;"	m
+resourceFile	src/main/scala/common/package.scala	/^    val resourceFile = subFile(projectDir, ("src" :: "main" :: "resources" :: resourcePath): _*)$/;"	l
+resourceFilesString	project/ScalaTestRunner.scala	/^    val resourceFilesString = resourceFiles.map(_.getAbsolutePath).mkString(":")$/;"	l
+resourcesFromAssignment	project/ProgFunBuild.scala	/^  val resourcesFromAssignment = {$/;"	l
+runLog	project/ScalaTestRunner.scala	/^    val runLog = out.toString()$/;"	l
+runScalaTest	project/ScalaTestRunner.scala	/^  def runScalaTest(classpath: Classpath, testClasses: File, outfile: File, policyFile: File, resourceFiles: List[File], logError: String => Unit) = {$/;"	m
+s	project/GradingFeedback.scala	/^    val s = (total + feedbackSummary.mkString + feedbackDetails.mkString).trim$/;"	l
+scalaTest	project/ProgFunBuild.scala	/^  val scalaTest = TaskKey[Unit]("scalaTest")$/;"	l
+scalaTestDefaultWeigth	project/Settings.scala	/^  val scalaTestDefaultWeigth = 10$/;"	l
+scalaTestDefaultWeigthProperty	project/Settings.scala	/^  val scalaTestDefaultWeigthProperty = "scalatest.defaultWeight"$/;"	l
+scalaTestGrade	project/ScalaTestRunner.scala	/^  def scalaTestGrade(classpath: Classpath, testClasses: File, outfile: File, policyFile: File, resourceFiles: List[File]) {$/;"	m
+scalaTestIndividualTestTimeoutProperty	project/Settings.scala	/^  val scalaTestIndividualTestTimeoutProperty = "scalatest.individualTestTimeout"$/;"	l
+scalaTestReadableFilesProperty	project/Settings.scala	/^  val scalaTestReadableFilesProperty = "scalatest.readableFiles"$/;"	l
+scalaTestReportFileProperty	project/Settings.scala	/^  val scalaTestReportFileProperty = "scalatest.reportFile"$/;"	l
+scalaTestSetting	project/ProgFunBuild.scala	/^  val scalaTestSetting = scalaTest <<=$/;"	l
+scalaTestSubmission	project/ProgFunBuild.scala	/^  val scalaTestSubmission = TaskKey[Unit]("scalaTestSubmission")$/;"	l
+scalaTestSubmissionSetting	project/ProgFunBuild.scala	/^  val scalaTestSubmissionSetting = scalaTestSubmission <<=$/;"	l
+scalaTestTimeout	project/Settings.scala	/^  val scalaTestTimeout = 320$/;"	l
+scaledScore	project/ScalaTestRunner.scala	/^      val scaledScore = GradingFeedback.maxTestScore * score \/ maxScore$/;"	l
+score	project/StyleChecker.scala	/^  def score(outputResult: OutputResult) = {$/;"	m
+scoreString	project/ProgFunBuild.scala	/^          val scoreString = "%.2f".format(GradingFeedback.totalScore)$/;"	l
+selectMainSources	project/ProgFunBuild.scala	/^  val selectMainSources = {$/;"	l
+selectResourcesForProject	project/ProgFunBuild.scala	/^  val selectResourcesForProject = {$/;"	l
+selectTestSources	project/ProgFunBuild.scala	/^  val selectTestSources = {$/;"	l
+selectTestsForProject	project/ProgFunBuild.scala	/^  val selectTestsForProject = {$/;"	l
+setMaxScore	project/GradingFeedback.scala	/^  def setMaxScore(maxScore: Double, styleScoreRatio: Double) {$/;"	m
+setMaxScore	project/ProgFunBuild.scala	/^  val setMaxScore = TaskKey[Unit]("setMaxScore")$/;"	l
+setMaxScoreHook	project/ProgFunBuild.scala	/^  val setMaxScoreHook = (compile in Compile) <<= (compile in Compile).dependsOn(setMaxScore)$/;"	l
+setMaxScoreSetting	project/ProgFunBuild.scala	/^  val setMaxScoreSetting = setMaxScore <<= (gradeProjectDetails) map { project =>$/;"	l
+setTestProperties	project/ProgFunBuild.scala	/^  val setTestProperties = TaskKey[Unit]("setTestProperties")$/;"	l
+setTestPropertiesHook	project/ProgFunBuild.scala	/^  val setTestPropertiesHook = (test in Test) <<= (test in Test).dependsOn(setTestProperties)$/;"	l
+setTestPropertiesSetting	project/ProgFunBuild.scala	/^  val setTestPropertiesSetting = setTestProperties := {$/;"	l
+shaHexDigest	project/CourseraHttp.scala	/^  def shaHexDigest(s: String): String = {$/;"	m
+shortS	project/ScalaTestRunner.scala	/^        val shortS =$/;"	l
+sizeRead	project/CourseraHttp.scala	/^      val sizeRead = try {$/;"	l
+sources	project/StyleChecker.scala	/^    val sources = allSources.filterNot{ f =>$/;"	l
+status	project/CourseraHttp.scala	/^        val status = (js \\ "status").convertTo[String]$/;"	l
+styleCheck	project/ProgFunBuild.scala	/^  val styleCheck = TaskKey[Unit]("styleCheck")$/;"	l
+styleCheckSetting	project/ProgFunBuild.scala	/^  val styleCheckSetting = styleCheck <<= (compile in Compile, sources in Compile, streams) map { (_, sourceFiles, s) =>$/;"	l
+styleCheckSubmission	project/ProgFunBuild.scala	/^  val styleCheckSubmission = TaskKey[Unit]("styleCheckSubmission")$/;"	l
+styleCheckSubmissionSetting	project/ProgFunBuild.scala	/^  val styleCheckSubmissionSetting = styleCheckSubmission <<= (sources in Compile, scalaTestSubmission) map { (sourceFiles, _) =>$/;"	l
+styleProblems	project/GradingFeedback.scala	/^  def styleProblems(log: String, score: Double) {$/;"	m
+subFile	src/main/scala/common/package.scala	/^  def subFile(file: File, children: String*) = {$/;"	m
+submission	project/CourseraHttp.scala	/^          val submission = parsed \\ "submission"$/;"	l
+submissionDirName	project/Settings.scala	/^  val submissionDirName = "submission"$/;"	l
+submissionJarFileName	project/Settings.scala	/^  val submissionJarFileName = "submittedSrc.jar"$/;"	l
+submissionJsonFileName	project/Settings.scala	/^  val submissionJsonFileName = "submission.json"$/;"	l
+submissionLoggerSetting	project/ProgFunBuild.scala	/^  val submissionLoggerSetting = extraLoggers ~= { currentFunction =>$/;"	l
+submissionProject	project/ProgFunBuild.scala	/^  lazy val submissionProject = Project(id = "submission", base = file(Settings.submissionDirName)) settings($/;"	l
+submit	project/ProgFunBuild.scala	/^  val submit = InputKey[Unit]("submit")$/;"	l
+submitGrade	project/CourseraHttp.scala	/^  def submitGrade(feedback: String, score: String, apiState: String, apiKey: String, gradeProject: ProjectDetails): ValidationNEL[String, Unit] = {$/;"	m
+submitProjectName	project/ProgFunBuild.scala	/^  val submitProjectName = SettingKey[String]("submitProjectName")$/;"	l
+submitSetting	project/ProgFunBuild.scala	/^  lazy val submitSetting = submit <<= inputTask { argTask =>$/;"	l
+submitSolution	project/CourseraHttp.scala	/^  def submitSolution(sourcesJar: File, submitProject: ProjectDetails, challenge: Challenge, chResponse: String): ValidationNEL[String, String] = {$/;"	m
+submitSources	project/ProgFunBuild.scala	/^  def submitSources(sourcesJar: File, submitProject: ProjectDetails, email: String, otPassword: String, logger: Logger) {$/;"	m
+submitUrl	project/Settings.scala	/^  def submitUrl(courseId: String) = "https:\/\/class.coursera.org\/"+ courseId +"\/assignment\/submit"$/;"	m
+success	project/RecordingLogger.scala	/^  def success(message: => String) = ()$/;"	m
+targetJar	project/ProgFunBuild.scala	/^      val targetJar = baseDir \/ Settings.submissionJarFileName$/;"	l
+targetZip	project/ProgFunBuild.scala	/^          val targetZip = targetDir \/ (handoutProjectName +".zip")$/;"	l
+testCompileFailed	project/GradingFeedback.scala	/^  def testCompileFailed(log: String) {$/;"	m
+testExecutionDebugLog	project/GradingFeedback.scala	/^  def testExecutionDebugLog(log: String) {$/;"	m
+testExecutionFailed	project/GradingFeedback.scala	/^  def testExecutionFailed(log: String) {$/;"	m
+testResultsFileName	project/Settings.scala	/^  val testResultsFileName = "scalaTestLog.txt"$/;"	l
+testRunpath	project/ScalaTestRunner.scala	/^    val testRunpath = runPathString(testClasses)$/;"	l
+testSourcesFromAssignment	project/ProgFunBuild.scala	/^  val testSourcesFromAssignment = {$/;"	l
+testsFailed	project/GradingFeedback.scala	/^  def testsFailed(log: String, score: Double) {$/;"	m
+total	project/GradingFeedback.scala	/^    val total = totalGradeMessage(totalScore) + "\\n\\n"$/;"	l
+totalScore	project/GradingFeedback.scala	/^  def totalScore = vTestScore + vStyleScore$/;"	m
+trace	project/RecordingLogger.scala	/^  def trace(t: => Throwable) = ()$/;"	m
+unpackJar	project/CourseraHttp.scala	/^  def unpackJar(file: File, targetDirectory: File): ValidationNEL[String, Unit] = {$/;"	m
+uploadFeedbackUrl	project/Settings.scala	/^  def uploadFeedbackUrl(courseId: String) = "https:\/\/class.coursera.org\/"+ courseId +"\/assignment\/api\/score"$/;"	m
+validIds	project/ProgFunBuild.scala	/^        val validIds = detailsMap.map(_._2.assignmentPartId)$/;"	l
+withArgs	project/CourseraHttp.scala	/^        val withArgs = baseReq << Map("assignment_part_sid" -> submitProject.assignmentPartId,$/;"	l
+withArgs	project/CourseraHttp.scala	/^    val withArgs = baseReq << Map("api_state" -> apiState, "score" -> score, "feedback" -> feedback) <:< Map("X-api-key" -> apiKey)$/;"	l
+withArgs	project/CourseraHttp.scala	/^    val withArgs = baseReq << Map("email_address" -> email,$/;"	l
+wrongNameMsg	project/ProgFunBuild.scala	/^        lazy val wrongNameMsg =$/;"	l
