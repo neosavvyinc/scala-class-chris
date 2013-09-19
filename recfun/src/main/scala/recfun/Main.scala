@@ -9,6 +9,7 @@ object Main {
         print(pascal(col, row) + " ")
       println()
     }
+
   }
 
   /**
@@ -39,12 +40,12 @@ object Main {
    * Exercise 3
    */
   def countChange(money: Int, coins: List[Int]): Int = {
-    def iter(moneyIter: Int, coinsIter: List[Int], count: Int): Int = {
+    def iter(moneyIter: Int, coinsIter: List[Int]): Int = {
       if (moneyIter == 0) 1
       else if (moneyIter < 0 || coinsIter.isEmpty) 0
-      else iter(moneyIter, coinsIter.tail, count) + iter(moneyIter - coinsIter.head, coinsIter, count)
+      else iter(moneyIter, coinsIter.tail) + iter(moneyIter - coinsIter.head, coinsIter)
     }
-    iter(money, coins, 0)
+    iter(money, coins)
   }
 }
 
