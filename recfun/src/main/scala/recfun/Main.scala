@@ -9,7 +9,6 @@ object Main {
         print(pascal(col, row) + " ")
       println()
     }
-
   }
 
   /**
@@ -48,6 +47,4 @@ object Main {
     iter(money, coins)
   }
 }
-
-
 
