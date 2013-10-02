@@ -188,4 +188,18 @@ class FunSetSuite extends FunSuite {
     val exist = exists(s, (x: Int) => x > 99)
     assert(!exist)
   }
+
+  test("map should return a set transformed by applying f to each element of s") {
+
+    val s = Set(2, 6)
+
+    val m = map(s, (x: Int) => x * 2)
+
+    assert(!m(2))
+    assert(m(4))
+
+    assert(!m(6))
+    assert(m(12))
+  }
+
 }

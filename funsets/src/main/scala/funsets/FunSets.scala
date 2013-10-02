@@ -80,16 +80,19 @@ object FunSets {
    * prove that "all values do not obey that rule" is false
    */
   def exists(s: Set, p: Int => Boolean): Boolean = {
-    def q(x: Int) = !p(x)
-    if (forall(s, q) == false) true
-    else false
+    !forall(s, (x: Int) => !p(x))
   }
 
   /**
    * Returns a set transformed by applying `f` to each element of `s`.
    */
-  def map(s: Set, f: Int => Int): Set = ???
+  def map(s: Set, f: Int => Int): Set = {
 
+    // for every element in s, check if f of that element 
+    // is equal to x, the passed in value
+    //
+    (x: Int) => exists(s, (y: Int) => f(y) == x)
+  }
   /**
    * Displays the contents of a set
    */
