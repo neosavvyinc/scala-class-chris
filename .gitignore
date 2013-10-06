@@ -1,0 +1,8 @@
+
+funsets/target/
+objsets/target/
+objsets/project/target/
+objsets/project/project/target/
+
+*.swp
+.DS_Store
