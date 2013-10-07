@@ -43,7 +43,7 @@ class TweetSetSuite extends FunSuite {
       assert(size(set5.filter(tw => tw.retweets == 20)) === 2)
     }
   }
-  /*
+
   test("union: set4c and set4d") {
     new TestSets {
       assert(size(set4c.union(set4d)) === 4)
@@ -62,6 +62,7 @@ class TweetSetSuite extends FunSuite {
     }
   }
 
+  /*
   test("descending: set5") {
     new TestSets {
       val trends = set5.descendingByRetweet
