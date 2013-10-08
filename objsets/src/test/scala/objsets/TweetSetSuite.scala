@@ -75,4 +75,10 @@ class TweetSetSuite extends FunSuite {
       assert(trends.head.user == "a" || trends.head.user == "b")
     }
   }
+
+//  test("tweetsContaining iPad") {
+//    val iPads = GoogleVsApple.tweetsContaining("iPad")
+//    assert(size(iPads) === 19)
+//  }
+
 }
