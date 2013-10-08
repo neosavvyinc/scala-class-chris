@@ -66,7 +66,8 @@ abstract class TweetSet {
    * Question: Should we implment this method here, or should it remain abstract
    * and be implemented in the subclasses?
    */
-  def mostRetweeted: Tweet = ???
+  def mostRetweeted: Tweet
+  def mrHelper(max: Tweet): Tweet
 
   /**
    * Returns a list containing all tweets of this set, sorted by retweet count
@@ -77,7 +78,7 @@ abstract class TweetSet {
    * Question: Should we implment this method here, or should it remain abstract
    * and be implemented in the subclasses?
    */
-  def descendingByRetweet: TweetList = ???
+  def descendingByRetweet: TweetList
 
 
   /**
@@ -114,6 +115,12 @@ class Empty extends TweetSet {
 
   def union(that: TweetSet): TweetSet = that
 
+  def mostRetweeted: Tweet = throw new NoSuchElementException
+
+  def mrHelper(max: Tweet) = max
+
+  def descendingByRetweet: TweetList = Nil
+
   /**
    * The following methods are already implemented
    */
@@ -127,8 +134,6 @@ class Empty extends TweetSet {
   def foreach(f: Tweet => Unit): Unit = ()
 }
 
-// val tweetA = new NonEmpty(aTweet, new Empty, new Empty)
-// val tweetB = new NonEmpty(bTweet, new Empty, new Empty)
 class NonEmpty(elem: Tweet, left: TweetSet, right: TweetSet) extends TweetSet {
 
   def filterAcc(p: Tweet => Boolean, acc: TweetSet): TweetSet =
@@ -137,6 +142,26 @@ class NonEmpty(elem: Tweet, left: TweetSet, right: TweetSet) extends TweetSet {
 
   def union(that: TweetSet): TweetSet =
     ((left.union(right)).union(that)).incl(elem)
+
+  // the key here is the Empty set mostRetweeted method, which simply returns
+  // the passed in Tweet
+  def mrHelper(max: Tweet) = {
+    if (elem.retweets > max.retweets) left.mrHelper(right.mrHelper(elem))
+    else left.mrHelper(right.mrHelper(max))
+  }
+
+  // is there a way to do this without the helper? 
+  def mostRetweeted: Tweet = mrHelper(elem)
+    
+
+  // calling this say, with 2 elements...
+  // first pass =>
+  // 10, 5 => 10 gets added to cons, is removed, leaving 5, call descendingByRetweet
+  // 5 => 5 gets added to cons, then removed, leaving an Empty. calling descendingByRetweet
+  // on Empty returns nil, leaving new Cons(10, new Cons(5, Nil))
+  def descendingByRetweet: TweetList = {
+      new Cons(mostRetweeted, remove(mostRetweeted).descendingByRetweet)
+  }
 
   /**
    * The following methods are already implemented
