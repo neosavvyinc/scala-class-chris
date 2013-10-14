@@ -91,6 +91,10 @@ object Huffman {
 
   //def timesBetter(cs: List[Char]): List[(Char, Int)] = (cs.sortWith(_<_)).group().map(xs => (xs.head, xs.length))
   //def timesBetter(cs: List[Char]): List[(Char, Int)] = cs.sortWith(_<_).groupBy(x => x).map(xs => (xs._1, xs._2.length)).toList
+  // note, don't really need cs.sortWith(_<_) here, but this is a good short, concise sorting function to remember...
+  def timesBetter(cs: List[Char]): List[(Char, Int)] = cs.groupBy(x => x).toList.map(xs => xs match {
+    case (char, theList) => (char, theList.length)
+  })
 
   def getNumInARow(acc: Int, chars: List[Char]): Int = {
     if (chars.isEmpty) acc
@@ -173,7 +177,7 @@ object Huffman {
     else until(singleton, combine)(combine(trees))
   }
 
-  val leaflist = List(Leaf('e', 1), Leaf('t', 2), Leaf('x', 4))
+  //val leaflist = List(Leaf('e', 1), Leaf('t', 2), Leaf('x', 4))
 //  Fork(
 //    Fork(
 //      Leaf(e,1),
@@ -206,7 +210,32 @@ object Huffman {
    * This function decodes the bit sequence `bits` using the code tree `tree` and returns
    * the resulting list of characters.
    */
-  def decode(tree: CodeTree, bits: List[Bit]): List[Char] = ???
+  // => iterate through bits, taking right/left paths corresponding to 1/0
+  // => if you reach end/leaf, start back at base of tree
+  // => if bits is empty, return acc
+  def decode(tree: CodeTree, bits: List[Bit]): List[Char] = {
+    def iter(acc: List[Char], t: CodeTree, bs: List[Bit]): List[Char] = {
+      if (bs == Nil) {
+        acc
+      } else {
+        t match {
+            case Fork(left, right, _, _) => bs match {
+              case 0 :: xs => iter(acc, left, xs) // advance bit counter...
+              case 1 :: xs => iter(acc, right, xs)
+              case _ => throw new Error("need a 0 or 1 here...")
+            }            
+            case Leaf(char, _) => iter(char :: acc, tree, bs) 
+            // don't advance bit counter here, got here from a Fork,
+            // which advances the counter itself, so this bit is still
+            // relevant
+        }
+      }
+    }
+    iter(List(), tree, bits).reverse
+//    iter(List(), tree, bits) match {
+//      //...
+//    }
+  }
 
   /**
    * A Huffman coding tree for the French language.
@@ -224,7 +253,7 @@ object Huffman {
   /**
    * Write a function that returns the decoded secret
    */
-  def decodedSecret: List[Char] = ???
+  def decodedSecret: List[Char] = decode(frenchCode, secret)
 
 
 
