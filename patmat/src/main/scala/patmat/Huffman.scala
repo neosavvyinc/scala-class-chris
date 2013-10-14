@@ -77,7 +77,23 @@ object Huffman {
    *       println("integer is  : "+ theInt)
    *   }
    */
-  def times(chars: List[Char]): List[(Char, Int)] = ???
+
+//  def times(chars: List[Char]): List[(Char, Int)] = chars match {
+//    case List() => List()
+//    case c :: cs => List((c, 1)) ::: times(cs)
+//  }
+
+  // this works, but feels ugly...
+  def times(chars: List[Char]): List[(Char, Int)] = {
+    chars.map(char => 
+        (char, chars.filter(c => c == char).length)).removeDuplicates
+  }
+
+  def getNumInARow(acc: Int, chars: List[Char]): Int = {
+    if (chars.isEmpty) acc
+    else if (!chars.head.equals(chars.tail.head)) acc
+    else getNumInARow(acc + 1, chars.tail)
+  }
 
   /**
    * Returns a list of `Leaf` nodes for a given frequency table `freqs`.
@@ -86,12 +102,33 @@ object Huffman {
    * head of the list should have the smallest weight), where the weight
    * of a leaf is the frequency of the character.
    */
-  def makeOrderedLeafList(freqs: List[(Char, Int)]): List[Leaf] = ???
+  def makeOrderedLeafList(freqs: List[(Char, Int)]): List[Leaf] = freqs match {
+    case List() => List()
+    case x :: xs => x match {
+      case (theChar, theInt) => (List(Leaf(theChar, theInt)) ::: makeOrderedLeafList(xs))
+                                  .sortWith( (x: Leaf, y: Leaf) => x.weight < y.weight )
+    }
+  }
+
+  /**
+   * isort and insert from lecture
+   */
+  /**************************************************/
+  def insert(x: Int, xs: List[Int]): List[Int] = xs match {
+    case List () => List(x)
+    case y :: ys => if (x <= y ) x :: xs else y :: insert(x, ys)
+  }
+
+  def isort(xs: List[Int]): List[Int] = xs match {
+    case List() => List()
+    case y :: ys => insert(y, isort(ys))
+  }
+  /**************************************************/
 
   /**
    * Checks whether the list `trees` contains only one single code tree.
    */
-  def singleton(trees: List[CodeTree]): Boolean = ???
+  def singleton(trees: List[CodeTree]): Boolean = trees.length == 1
 
   /**
    * The parameter `trees` of this function is a list of code trees ordered
@@ -105,7 +142,11 @@ object Huffman {
    * If `trees` is a list of less than two elements, that list should be returned
    * unchanged.
    */
-  def combine(trees: List[CodeTree]): List[CodeTree] = ???
+  def combine(trees: List[CodeTree]): List[CodeTree] = trees match {
+    case List() => trees
+    case List(_) => trees
+    case c1 :: c2 :: cs => List(makeCodeTree(c1, c2)) ::: cs
+  }
 
   /**
    * This function will be called in the following way:
@@ -124,7 +165,22 @@ object Huffman {
    *    the example invocation. Also define the return type of the `until` function.
    *  - try to find sensible parameter names for `xxx`, `yyy` and `zzz`.
    */
-  def until(xxx: ???, yyy: ???)(zzz: ???): ??? = ???
+  def until(singleton: List[CodeTree] => Boolean, combine: List[CodeTree] => List[CodeTree])(trees: List[CodeTree]): List[CodeTree] = {
+    if (singleton(trees)) trees
+    else until(singleton, combine)(combine(trees))
+  }
+
+  val leaflist = List(Leaf('e', 1), Leaf('t', 2), Leaf('x', 4))
+//  Fork(
+//    Fork(
+//      Leaf(e,1),
+//      Leaf(t,2),
+//      List(e, t),
+//      3),
+//    Leaf(x,4),
+//    List(e, t, x),
+//    7
+//  )
 
   /**
    * This function creates a code tree which is optimal to encode the text `chars`.
@@ -132,7 +188,10 @@ object Huffman {
    * The parameter `chars` is an arbitrary text. This function extracts the character
    * frequencies from that text and creates a code tree based on them.
    */
-  def createCodeTree(chars: List[Char]): CodeTree = ???
+  def createCodeTree(chars: List[Char]): CodeTree = {
+    val leaflist = makeOrderedLeafList(times(chars)) // List[Leaf] 
+    until(singleton, combine)(leaflist).head
+  }
 
 
 
