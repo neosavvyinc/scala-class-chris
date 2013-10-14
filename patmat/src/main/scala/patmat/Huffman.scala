@@ -89,6 +89,9 @@ object Huffman {
         (char, chars.filter(c => c == char).length)).removeDuplicates
   }
 
+  //def timesBetter(cs: List[Char]): List[(Char, Int)] = (cs.sortWith(_<_)).group().map(xs => (xs.head, xs.length))
+  //def timesBetter(cs: List[Char]): List[(Char, Int)] = cs.sortWith(_<_).groupBy(x => x).map(xs => (xs._1, xs._2.length)).toList
+
   def getNumInARow(acc: Int, chars: List[Char]): Int = {
     if (chars.isEmpty) acc
     else if (!chars.head.equals(chars.tail.head)) acc
