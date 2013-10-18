@@ -84,7 +84,7 @@ object Huffman {
 //  }
 
   // this works, but feels ugly...
-  def times(chars: List[Char]): List[(Char, Int)] = {
+  def timesOld(chars: List[Char]): List[(Char, Int)] = {
     chars.map(char => 
         (char, chars.filter(c => c == char).length)).removeDuplicates
   }
@@ -92,7 +92,7 @@ object Huffman {
   //def timesBetter(cs: List[Char]): List[(Char, Int)] = (cs.sortWith(_<_)).group().map(xs => (xs.head, xs.length))
   //def timesBetter(cs: List[Char]): List[(Char, Int)] = cs.sortWith(_<_).groupBy(x => x).map(xs => (xs._1, xs._2.length)).toList
   // note, don't really need cs.sortWith(_<_) here, but this is a good short, concise sorting function to remember...
-  def timesBetter(cs: List[Char]): List[(Char, Int)] = cs.groupBy(x => x).toList.map(xs => xs match {
+  def times(cs: List[Char]): List[(Char, Int)] = cs.groupBy(x => x).toList.map(xs => xs match {
     case (char, theList) => (char, theList.length)
   })
 
@@ -214,27 +214,26 @@ object Huffman {
   // => if you reach end/leaf, start back at base of tree
   // => if bits is empty, return acc
   def decode(tree: CodeTree, bits: List[Bit]): List[Char] = {
-    def iter(acc: List[Char], t: CodeTree, bs: List[Bit]): List[Char] = {
+    def iter(t: CodeTree, bs: List[Bit]): List[Char] = {
       if (bs == Nil) {
-        acc
+        Nil
       } else {
         t match {
             case Fork(left, right, _, _) => bs match {
-              case 0 :: xs => iter(acc, left, xs) // advance bit counter...
-              case 1 :: xs => iter(acc, right, xs)
+//              case 0 :: Nil => chars(left)(0) :: iter(left, Nil)
+//              case 1 :: Nil => chars(right)(0) :: iter(right, Nil)
+              case 0 :: xs => iter(left, xs) // advance bit counter...
+              case 1 :: xs => iter(right, xs)
               case _ => throw new Error("need a 0 or 1 here...")
             }            
-            case Leaf(char, _) => iter(char :: acc, tree, bs) 
+            case Leaf(char, _) => char :: iter(tree, bs) 
             // don't advance bit counter here, got here from a Fork,
-            // which advances the counter itself, so this bit is still
-            // relevant
+            // which advances the counter itself, so the current bit 
+            // is still relevant
         }
       }
     }
-    iter(List(), tree, bits).reverse
-//    iter(List(), tree, bits) match {
-//      //...
-//    }
+    iter(tree, bits)
   }
 
   /**
@@ -263,7 +262,23 @@ object Huffman {
    * This function encodes `text` using the code tree `tree`
    * into a sequence of bits.
    */
-  def encode(tree: CodeTree)(text: List[Char]): List[Bit] = ???
+  // stop iterating if char list is empty, we're done
+  // if Fork, check if left contains char, check if right contains char
+  // if leaf, you're at the end, start over with original tree, send in char list tail
+  def encode(tree: CodeTree)(text: List[Char]): List[Bit] = {
+
+    def iter(t: CodeTree, c: List[Char]): List[Bit] = {
+      if (c == Nil) {
+        Nil
+      } else t match {
+        case Fork(left, right, _, _) => 
+          if (chars(left).contains(c.head)) 0 :: iter(left, c)
+          else 1 :: iter(right, c)
+        case Leaf(char, _) => iter(t, c.tail)
+      }
+    }
+    iter(tree, text)
+  }
 
 
   // Part 4b: Encoding using code table
@@ -274,7 +289,10 @@ object Huffman {
    * This function returns the bit sequence that represents the character `char` in
    * the code table `table`.
    */
-  def codeBits(table: CodeTable)(char: Char): List[Bit] = ???
+  def codeBits(table: CodeTable)(char: Char): List[Bit] = table match {
+    case Nil => throw new Error("Oh hell naw")
+    case (c, bs) :: cs => if (c == char) bs else codeBits(cs)(char)
+  }
 
   /**
    * Given a code tree, create a code table which contains, for every character in the
